@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roblox Reels: Claude skills for story reels made in code</title>
+<meta name="description" content="Claude skills that make vertical story reels in code: Roblox-style 'In this town' shorts, cartoon 3D shorts, word-synced captions and Minecraft shorts. three.js + Remotion, no AI video generator.">
+<meta property="og:title" content="Roblox Reels">
+<meta property="og:description" content="Claude skills that make vertical story reels in code. Watch the sample and install in one command.">
+<meta property="og:image" content="https://playlikemen.github.io/roblox-reels/sample/hat-town.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='14' width='20' height='14' fill='%23d5c7a6' stroke='%230b0a0c' stroke-width='2'/%3E%3Crect x='9' y='4' width='14' height='10' fill='%23ffd21f' stroke='%230b0a0c' stroke-width='2'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --ink: #0b0a0c; --paper: #f6ead0; --cream: #fbf6e8; --yellow: #ffd21f; --sky: #3e7fd2; --stone: #d5c7a6;
+    --muted: #5c5648; --line: #0b0a0c;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 "DejaVu Sans", "Segoe UI", system-ui, -apple-system, sans-serif; }
+  a { color: inherit; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  header { border-bottom: 3px solid var(--line); background: var(--cream); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { font-weight: 900; letter-spacing: -.01em; text-decoration: none; font-size: 18px; display: flex; align-items: center; gap: 10px; }
+  .brand i { width: 18px; height: 22px; display: inline-block; background: linear-gradient(var(--yellow) 0 45%, var(--stone) 45%); border: 2px solid var(--ink); }
+  nav a { font-weight: 700; font-size: 14px; margin-left: 18px; text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 48px; align-items: center; padding: 56px 0 48px; }
+  .kicker { display: inline-block; background: var(--yellow); border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); font-weight: 900; font-size: 12px; letter-spacing: .07em; text-transform: uppercase; padding: 4px 9px; }
+  h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.04; letter-spacing: -.025em; margin: 18px 0 16px; font-weight: 900; text-wrap: balance; }
+  .lede { font-size: 18px; color: var(--muted); max-width: 34em; margin: 0 0 26px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; font-weight: 900; font-size: 15px; border: 3px solid var(--ink); background: var(--cream); text-decoration: none; box-shadow: 4px 4px 0 var(--ink); transition: transform .08s, box-shadow .08s; }
+  .btn:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); }
+  .btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+  .btn.primary { background: var(--yellow); }
+
+  .phone { position: relative; border: 4px solid var(--ink); background: #000; aspect-ratio: 9 / 16; box-shadow: 8px 8px 0 var(--ink); overflow: hidden; }
+  .phone video { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .phone figcaption { position: absolute; left: 0; right: 0; bottom: -40px; text-align: center; font-size: 13px; color: var(--muted); }
+  .sound { position: absolute; top: 10px; right: 10px; border: 2px solid var(--ink); background: var(--cream); font-weight: 900; font-size: 12px; padding: 5px 9px; cursor: pointer; box-shadow: 2px 2px 0 var(--ink); }
+
+  section { padding: 44px 0; border-top: 3px solid var(--line); }
+  h2 { font-size: 28px; letter-spacing: -.015em; margin: 0 0 8px; font-weight: 900; }
+  .sub { color: var(--muted); margin: 0 0 24px; max-width: 40em; }
+
+  .install { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+  .card { background: var(--cream); border: 3px solid var(--ink); padding: 18px; box-shadow: 5px 5px 0 var(--ink); min-width: 0; }
+  .card h3 { margin: 0 0 4px; font-size: 16px; font-weight: 900; }
+  .card p { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
+  .code { position: relative; background: var(--ink); color: #f6f1e4; padding: 12px 14px; font: 13px/1.6 "DejaVu Sans Mono", ui-monospace, Menlo, Consolas, monospace; overflow-x: auto; white-space: pre; }
+  .code + .code { margin-top: 8px; }
+  .copy { position: absolute; top: 6px; right: 6px; font: 700 11px/1 inherit; color: var(--ink); background: var(--yellow); border: 0; padding: 5px 7px; cursor: pointer; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--cream); border: 3px solid var(--ink); }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 2px solid #d9ccb0; vertical-align: top; font-size: 15px; }
+  th { background: var(--ink); color: var(--cream); font-size: 13px; letter-spacing: .05em; text-transform: uppercase; }
+  td:first-child { white-space: nowrap; font-weight: 900; font-family: "DejaVu Sans Mono", ui-monospace, monospace; font-size: 14px; }
+  tr:last-child td { border-bottom: 0; }
+  .tag { display: inline-block; background: var(--yellow); border: 2px solid var(--ink); font: 900 10px/1 inherit; letter-spacing: .06em; text-transform: uppercase; padding: 3px 5px; margin-left: 6px; vertical-align: 2px; font-family: "DejaVu Sans", sans-serif; }
+
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border: 3px solid var(--ink); background: var(--cream); counter-reset: s; }
+  .steps div { padding: 16px; border-right: 2px solid #d9ccb0; counter-increment: s; }
+  .steps div:last-child { border-right: 0; }
+  .steps div::before { content: counter(s, decimal-leading-zero); display: block; font-weight: 900; font-size: 13px; color: var(--sky); margin-bottom: 4px; }
+  .steps b { display: block; margin-bottom: 4px; }
+  .steps span { font-size: 14px; color: var(--muted); }
+
+  .reqs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .reqs span { border: 2px solid var(--ink); background: var(--cream); padding: 5px 10px; font-size: 14px; font-weight: 700; }
+
+  footer { border-top: 3px solid var(--line); padding: 26px 0 40px; font-size: 14px; color: var(--muted); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; gap: 64px; padding-top: 36px; }
+    .phone { max-width: 300px; margin: 0 auto; }
+    nav a:not(:last-child) { display: none; }
+    .steps div { border-right: 0; border-bottom: 2px solid #d9ccb0; }
+    td:first-child { white-space: normal; }
+  }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="./"><i aria-hidden="true"></i>Roblox Reels</a>
+    <nav aria-label="Main">
+      <a href="#install">Install</a>
+      <a href="#skills">Skills</a>
+      <a href="https://github.com/playlikemen/roblox-reels">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <span class="kicker">Claude skills &middot; MIT</span>
+      <h1>Story reels made in code, not in a video generator.</h1>
+      <p class="lede">Claude writes the "In this town" script, voices it, plans every shot against the spoken words, renders a blocky 3D town with three.js in Remotion, mixes the sound and burns in Shorts-safe captions. Everything runs on your own machine. No GPU needed.</p>
+      <div class="cta">
+        <a class="btn primary" href="#install">Install in Claude</a>
+        <a class="btn" href="sample/hat-town.mp4" download>Download sample MP4</a>
+        <a class="btn" href="https://github.com/playlikemen/roblox-reels">View source</a>
+      </div>
+    </div>
+    <figure class="phone" style="margin:0">
+      <video id="v" src="sample/hat-town.mp4" poster="sample/hat-town.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Sample reel: Hat Town, 42 seconds"></video>
+      <button class="sound" id="snd" type="button" aria-pressed="false">Sound on</button>
+      <figcaption>"Hat Town", 42 s, 1080x1920. Made with <code>roblox-reels</code>.</figcaption>
+    </figure>
+  </div>
+
+  <section id="install">
+    <div class="wrap">
+      <h2>Install</h2>
+      <p class="sub">Pick one. Each way also updates: run it again, or use the update commands.</p>
+      <div class="install">
+        <div class="card">
+          <h3>Claude Code plugin <span class="tag">Recommended</span></h3>
+          <p>Run inside Claude Code.</p>
+          <div class="code">/plugin marketplace add playlikemen/roblox-reels
+/plugin install roblox-reels@roblox-reels</div>
+          <p style="margin:12px 0 8px">Update later:</p>
+          <div class="code">/plugin marketplace update roblox-reels
+/plugin update roblox-reels@roblox-reels</div>
+        </div>
+        <div class="card">
+          <h3>One-line installer</h3>
+          <p>Copies every skill to <code>~/.claude/skills</code>. Run again to update.</p>
+          <div class="code">curl -fsSL https://raw.githubusercontent.com/playlikemen/roblox-reels/main/install.sh | bash</div>
+          <p style="margin:12px 0 8px">Only some skills, or into this project:</p>
+          <div class="code">curl -fsSL https://raw.githubusercontent.com/playlikemen/roblox-reels/main/install.sh | bash -s -- roblox-reels captions</div>
+          <div class="code">curl -fsSL https://raw.githubusercontent.com/playlikemen/roblox-reels/main/install.sh | SKILLS_DIR=.claude/skills bash</div>
+        </div>
+        <div class="card">
+          <h3>Claude apps</h3>
+          <p>claude.ai and the desktop app.</p>
+          <p style="color:var(--ink)">1. Download a skill ZIP from the <a href="https://github.com/playlikemen/roblox-reels/releases/latest">latest release</a>.<br>2. Open <b>Settings &rsaquo; Capabilities &rsaquo; Skills</b> and upload it.</p>
+          <p>To update, upload the ZIP from a newer release.</p>
+        </div>
+      </div>
+      <div class="reqs" aria-label="Requirements">
+        <span>Node 20+</span><span>ffmpeg</span><span>Python 3.10+</span><span>pip install kokoro faster-whisper soundfile numpy scipy pillow</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>How a reel is made</h2>
+      <p class="sub">Ask: <i>"Use the roblox reels skill and make an 'In this town' reel about a town where it rains whatever people are thinking."</i></p>
+      <div class="steps">
+        <div><b>Script</b><span>Rule in line one, "except me", planted details, a twist, a comment hook.</span></div>
+        <div><b>Voice</b><span>Local Kokoro voice, word times from faster-whisper.</span></div>
+        <div><b>Shot plan</b><span>Every cut, sticker and face change lands on a spoken word.</span></div>
+        <div><b>Render</b><span>Toon-shaded blocky town in three.js, stills checked before the full render.</span></div>
+        <div><b>Sound + captions</b><span>Ducked music, synthesized effects, -14 LUFS, 2-3 word captions.</span></div>
+        <div><b>QA</b><span>Every frame checked for black, frozen and popping frames.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills in the pack</h2>
+      <p class="sub">Seven skills. Start with <code>roblox-reels</code>; the others go deeper on one area.</p>
+      <table>
+        <thead><tr><th scope="col">Skill</th><th scope="col">What it does</th></tr></thead>
+        <tbody>
+          <tr><td>roblox-reels<span class="tag">Start here</span></td><td>30-60 s narrated "In this town" reels with original blocky characters, from script to captioned MP4. Ships the Hat Town source, scripts and audio.</td></tr>
+          <tr><td>roblox-in-this-town</td><td>What makes Roblox story shorts go viral, and how to build them in Roblox Studio over MCP.</td></tr>
+          <tr><td>cartoon-3d-short</td><td>55-70 s cartoon stories: 2D characters in a painted 3D world, with acting presets and QA agents.</td></tr>
+          <tr><td>claude-animated-shorts</td><td>The original bridge-short version of the cartoon 3D skill, with its full source and measured look reports.</td></tr>
+          <tr><td>captions</td><td>Word-synced captions as a green-screen or alpha clip, kept clear of the Shorts UI.</td></tr>
+          <tr><td>minecraft-shorts</td><td>Minecraft short scripts with an in-game test list and a shot list.</td></tr>
+          <tr><td>minecraft-story</td><td>2:15 "In this world" Minecraft story videos, built code-first with sub-agents.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>MIT licensed. Bundles skills by laSenu, mromidev and fahniazz; see <a href="https://github.com/playlikemen/roblox-reels/blob/main/THIRD_PARTY_NOTICES.md">notices</a>.</span>
+    <span>Not affiliated with Roblox Corporation, Mojang or Microsoft.</span>
+  </div>
+</footer>
+
+<script>
+  const v = document.getElementById('v'), b = document.getElementById('snd');
+  b.addEventListener('click', () => { v.muted = !v.muted; if (!v.muted) v.play(); b.textContent = v.muted ? 'Sound on' : 'Mute'; b.setAttribute('aria-pressed', String(!v.muted)); });
+  document.querySelectorAll('.code').forEach(c => {
+    const t = c.textContent, btn = document.createElement('button');
+    btn.className = 'copy'; btn.type = 'button'; btn.textContent = 'Copy'; btn.setAttribute('aria-label', 'Copy command');
+    btn.onclick = () => navigator.clipboard.writeText(t).then(() => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = 'Copy', 1400); });
+    c.append(btn);
+  });
+</script>
+</body>
+</html>

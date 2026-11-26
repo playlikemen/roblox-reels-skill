@@ -2,12 +2,12 @@
 
 Claude skills that make vertical story reels in code: Roblox-style "In this town, ..." shorts, cartoon 3D shorts, word-synced captions and Minecraft shorts. The picture is rendered with three.js inside [Remotion](https://www.remotion.dev/) on your own machine. No Roblox Studio and no AI video generator are needed for the main skill.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Project page](https://img.shields.io/badge/demo-GitHub%20Pages-ffd21f)](https://playlikemen.github.io/roblox-reels/) [![Release](https://img.shields.io/github/v/release/playlikemen/roblox-reels)](https://github.com/playlikemen/roblox-reels/releases/latest)
 
 <p align="center">
   <img src="docs/demo.gif" width="270" alt="Clip from Hat Town: the camera climbs a tower of hat blocks to a clock">
 </p>
-<p align="center"><i>"Hat Town", 42 s, made with the <code>roblox-reels</code> skill. Watch the full reel at <a href="https://roblox.campusloop.space/">roblox.campusloop.space</a>.</i></p>
+<p align="center"><i>"Hat Town", 42 s, made with the <code>roblox-reels</code> skill. <a href="https://playlikemen.github.io/roblox-reels/">Watch it on the project page</a> or <a href="https://playlikemen.github.io/roblox-reels/sample/hat-town.mp4">download the sample MP4</a>.</i></p>
 
 ## Skills
 

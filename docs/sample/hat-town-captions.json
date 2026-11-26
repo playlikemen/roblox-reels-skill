@@ -1,0 +1,307 @@
+[
+ {
+  "text": "IN THIS TOWN,",
+  "in": 0.0,
+  "out": 1.07
+ },
+ {
+  "text": "EVERY LIE YOU",
+  "in": 1.22,
+  "out": 1.7
+ },
+ {
+  "text": "TELL MAKES YOUR",
+  "in": 1.7,
+  "out": 2.26
+ },
+ {
+  "text": "HAT GROW ONE",
+  "in": 2.26,
+  "out": 2.86
+ },
+ {
+  "text": "BLOCK TALLER.",
+  "in": 2.86,
+  "out": 3.65
+ },
+ {
+  "text": "ONE TINY LIE,",
+  "in": 3.96,
+  "out": 4.7
+ },
+ {
+  "text": "ONE BLOCK.",
+  "in": 4.7,
+  "out": 5.33
+ },
+ {
+  "text": "THE BAKER'S HAT",
+  "in": 5.64,
+  "out": 6.2
+ },
+ {
+  "text": "HAS SIX BLOCKS.",
+  "in": 6.2,
+  "out": 7.17
+ },
+ {
+  "text": "THE MAYOR'S",
+  "in": 7.24,
+  "out": 7.7
+ },
+ {
+  "text": "HAS NINETEEN.",
+  "in": 7.7,
+  "out": 8.43
+ },
+ {
+  "text": "THE ONLY THING",
+  "in": 8.78,
+  "out": 9.34
+ },
+ {
+  "text": "TALLER IS THE",
+  "in": 9.34,
+  "out": 10.0
+ },
+ {
+  "text": "CLOCK TOWER.",
+  "in": 10.0,
+  "out": 10.69
+ },
+ {
+  "text": "PEOPLE LINE UP",
+  "in": 11.02,
+  "out": 11.58
+ },
+ {
+  "text": "AT THE BARBER",
+  "in": 11.58,
+  "out": 12.12
+ },
+ {
+  "text": "JUST TO SAW",
+  "in": 12.12,
+  "out": 12.72
+ },
+ {
+  "text": "THEIR",
+  "in": 12.72,
+  "out": 12.86
+ },
+ {
+  "text": "HATS DOWN.",
+  "in": 12.86,
+  "out": 13.59
+ },
+ {
+  "text": "EVERYONE HAS",
+  "in": 13.92,
+  "out": 14.38
+ },
+ {
+  "text": "A TALL HAT.",
+  "in": 14.38,
+  "out": 15.12
+ },
+ {
+  "text": "EXCEPT ME.",
+  "in": 15.12,
+  "out": 15.87
+ },
+ {
+  "text": "MY HAT HAS",
+  "in": 16.12,
+  "out": 16.52
+ },
+ {
+  "text": "NEVER GROWN.",
+  "in": 16.52,
+  "out": 17.2
+ },
+ {
+  "text": "NOT ONCE.",
+  "in": 17.2,
+  "out": 17.91
+ },
+ {
+  "text": "MY BEST FRIEND",
+  "in": 18.24,
+  "out": 18.8
+ },
+ {
+  "text": "PIP SAID THAT'S",
+  "in": 18.8,
+  "out": 19.4
+ },
+ {
+  "text": "IMPOSSIBLE.",
+  "in": 19.4,
+  "out": 20.05
+ },
+ {
+  "text": "SO HE",
+  "in": 20.32,
+  "out": 20.6
+ },
+ {
+  "text": "TESTED ME.",
+  "in": 20.6,
+  "out": 21.36
+ },
+ {
+  "text": "DO YOU LIKE",
+  "in": 21.36,
+  "out": 21.68
+ },
+ {
+  "text": "MY HAIRCUT?",
+  "in": 21.68,
+  "out": 22.35
+ },
+ {
+  "text": "IT WAS TERRIBLE.",
+  "in": 22.64,
+  "out": 23.41
+ },
+ {
+  "text": "I LOVE IT,",
+  "in": 23.54,
+  "out": 24.08
+ },
+ {
+  "text": "I SAID.",
+  "in": 24.08,
+  "out": 24.65
+ },
+ {
+  "text": "NOTHING.",
+  "in": 24.98,
+  "out": 25.43
+ },
+ {
+  "text": "THEN THE MAYOR",
+  "in": 25.84,
+  "out": 26.24
+ },
+ {
+  "text": "ASKED,",
+  "in": 26.24,
+  "out": 26.86
+ },
+ {
+  "text": "DID YOU VOTE",
+  "in": 26.86,
+  "out": 27.18
+ },
+ {
+  "text": "FOR ME?",
+  "in": 27.18,
+  "out": 27.79
+ },
+ {
+  "text": "OF COURSE,",
+  "in": 28.0,
+  "out": 28.54
+ },
+ {
+  "text": "I SAID.",
+  "in": 28.54,
+  "out": 28.88
+ },
+ {
+  "text": "STILL NOTHING.",
+  "in": 28.88,
+  "out": 30.05
+ },
+ {
+  "text": "THE",
+  "in": 30.12,
+  "out": 30.2
+ },
+ {
+  "text": "WHOLE SQUARE",
+  "in": 30.2,
+  "out": 30.6
+ },
+ {
+  "text": "WENT QUIET.",
+  "in": 30.6,
+  "out": 31.39
+ },
+ {
+  "text": "THEN PIP",
+  "in": 31.64,
+  "out": 31.92
+ },
+ {
+  "text": "LOOKED UP.",
+  "in": 31.92,
+  "out": 32.56
+ },
+ {
+  "text": "WAY UP.",
+  "in": 32.56,
+  "out": 33.02
+ },
+ {
+  "text": "AT THE",
+  "in": 33.02,
+  "out": 33.2
+ },
+ {
+  "text": "CLOCK TOWER.",
+  "in": 33.2,
+  "out": 33.95
+ },
+ {
+  "text": "THE ONE",
+  "in": 34.24,
+  "out": 34.46
+ },
+ {
+  "text": "THAT HAS ALWAYS",
+  "in": 34.46,
+  "out": 35.0
+ },
+ {
+  "text": "STOOD RIGHT",
+  "in": 35.0,
+  "out": 35.5
+ },
+ {
+  "text": "ABOVE MY HEAD.",
+  "in": 35.5,
+  "out": 36.35
+ },
+ {
+  "text": "IT WAS NEVER",
+  "in": 36.62,
+  "out": 37.04
+ },
+ {
+  "text": "A CLOCK TOWER.",
+  "in": 37.04,
+  "out": 37.91
+ },
+ {
+  "text": "SO,",
+  "in": 38.18,
+  "out": 38.38
+ },
+ {
+  "text": "HOW MANY LIES",
+  "in": 38.38,
+  "out": 39.04
+ },
+ {
+  "text": "HAVE I TOLD",
+  "in": 39.04,
+  "out": 39.48
+ },
+ {
+  "text": "YOU TODAY?",
+  "in": 39.48,
+  "out": 40.05
+ }
+]
