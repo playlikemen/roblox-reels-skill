@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Skills for making vertical story reels in code: Roblox-style 'In this town' shorts, cartoon 3D shorts, word-synced captions and Minecraft shorts.",
   "author": { "name": "playlikemen", "url": "https://github.com/playlikemen" },
-  "homepage": "https://github.com/playlikemen/roblox-reels",
-  "repository": "https://github.com/playlikemen/roblox-reels",
+  "homepage": "https://github.com/playlikemen/roblox-reels-skill",
+  "repository": "https://github.com/playlikemen/roblox-reels-skill",
   "license": "MIT",
   "keywords": ["shorts", "reels", "roblox", "remotion", "threejs", "captions", "video"]
 }

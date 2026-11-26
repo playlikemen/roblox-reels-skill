@@ -2,12 +2,12 @@
 
 Claude skills that make vertical story reels in code: Roblox-style "In this town, ..." shorts, cartoon 3D shorts, word-synced captions and Minecraft shorts. The picture is rendered with three.js inside [Remotion](https://www.remotion.dev/) on your own machine. No Roblox Studio and no AI video generator are needed for the main skill.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Project page](https://img.shields.io/badge/demo-GitHub%20Pages-ffd21f)](https://playlikemen.github.io/roblox-reels/) [![Release](https://img.shields.io/github/v/release/playlikemen/roblox-reels)](https://github.com/playlikemen/roblox-reels/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Project page](https://img.shields.io/badge/demo-GitHub%20Pages-ffd21f)](https://playlikemen.github.io/roblox-reels-skill/) [![Release](https://img.shields.io/github/v/release/playlikemen/roblox-reels-skill)](https://github.com/playlikemen/roblox-reels-skill/releases/latest)
 
 <p align="center">
   <img src="docs/demo.gif" width="270" alt="Clip from Hat Town: the camera climbs a tower of hat blocks to a clock">
 </p>
-<p align="center"><i>"Hat Town", 42 s, made with the <code>roblox-reels</code> skill. <a href="https://playlikemen.github.io/roblox-reels/">Watch it on the project page</a> or <a href="https://playlikemen.github.io/roblox-reels/sample/hat-town.mp4">download the sample MP4</a>.</i></p>
+<p align="center"><i>"Hat Town", 42 s, made with the <code>roblox-reels</code> skill. <a href="https://playlikemen.github.io/roblox-reels-skill/">Watch it on the project page</a> or <a href="https://playlikemen.github.io/roblox-reels-skill/sample/hat-town.mp4">download the sample MP4</a>.</i></p>
 
 ## Skills
 
@@ -28,7 +28,7 @@ Claude skills that make vertical story reels in code: Roblox-style "In this town
 Run these inside Claude Code:
 
 ```
-/plugin marketplace add playlikemen/roblox-reels
+/plugin marketplace add playlikemen/roblox-reels-skill
 /plugin install roblox-reels@roblox-reels
 ```
 
@@ -46,20 +46,20 @@ To update:
 Installs every skill into `~/.claude/skills`. Run the same command again to update.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/playlikemen/roblox-reels/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/playlikemen/roblox-reels-skill/main/install.sh | bash
 ```
 
 Only some skills, or into the current project:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/playlikemen/roblox-reels/main/install.sh | bash -s -- roblox-reels captions
-curl -fsSL https://raw.githubusercontent.com/playlikemen/roblox-reels/main/install.sh | SKILLS_DIR=.claude/skills bash
+curl -fsSL https://raw.githubusercontent.com/playlikemen/roblox-reels-skill/main/install.sh | bash -s -- roblox-reels captions
+curl -fsSL https://raw.githubusercontent.com/playlikemen/roblox-reels-skill/main/install.sh | SKILLS_DIR=.claude/skills bash
 ```
 
 By hand:
 
 ```bash
-git clone https://github.com/playlikemen/roblox-reels
+git clone https://github.com/playlikemen/roblox-reels-skill
 mkdir -p ~/.claude/skills && cp -R roblox-reels/skills/* ~/.claude/skills/
 ```
 
@@ -67,7 +67,7 @@ mkdir -p ~/.claude/skills && cp -R roblox-reels/skills/* ~/.claude/skills/
 
 ### Claude apps (claude.ai, desktop)
 
-1. Download a skill ZIP from the [latest release](https://github.com/playlikemen/roblox-reels/releases/latest), for example `roblox-reels.zip`.
+1. Download a skill ZIP from the [latest release](https://github.com/playlikemen/roblox-reels-skill/releases/latest), for example `roblox-reels.zip`.
 2. In Claude, open **Settings > Capabilities > Skills** and upload the ZIP.
 
 To update, upload the ZIP from a newer release.
