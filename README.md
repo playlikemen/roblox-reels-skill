@@ -60,7 +60,7 @@ By hand:
 
 ```bash
 git clone https://github.com/playlikemen/roblox-reels-skill
-mkdir -p ~/.claude/skills && cp -R roblox-reels/skills/* ~/.claude/skills/
+mkdir -p ~/.claude/skills && cp -R roblox-reels-skill/skills/* ~/.claude/skills/
 ```
 
 `minecraft-story` also needs its sub-agents: `node ~/.claude/skills/minecraft-story/scripts/install.mjs`.
