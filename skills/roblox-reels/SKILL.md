@@ -31,8 +31,8 @@ The characters are original blocky figures. Never use Roblox logos, other creato
    - a last line that invites a comment
    Write numbers as words. Aim for 110-150 words. Show the user the script and the planted details before building.
 2. **Project.** Copy `templates/hat-town/` to a new folder and run `npm install`. It is a full working reel; change the story, keep the machinery.
-3. **Voice and word times.** `scripts/tts.py` (Kokoro, local) then `scripts/words.py` (faster-whisper, aligned to the script's own spelling). Target 3.5-4.7 words per second. The voice is the clock: every cut, pop and face change is anchored to a word with `W(line, word)` in `src/hat/story.ts`.
-4. **Shot plan** in `story.ts`. One shot per sentence or clause. Per shot: where the camera is, what it looks at, the field of view, and what changes on which word.
+3. **Voice and word times.** `scripts/tts.py` (Kokoro, local) then `scripts/words.py` (faster-whisper, aligned to the script's own spelling). Target 3.5-3.8 words per second (210-225 wpm; `--speed 1.35`). The voice is the clock: every cut, pop and face change is anchored to a word with `W(line, word)` in `src/hat/story.ts`.
+4. **Shot plan** in `story.ts`. One shot per phrase of 2-5 words (mean shot about 1 s, none over 2 s except the opener), as measured on viral reels of this format in [references/direction.md](references/direction.md). Per shot: where the camera is, what it looks at, the field of view, and what changes on which word.
 5. **Stills before rendering.** `node stills.mjs out/stills/a_ 20,100,300 0.5` (in the project folder; it ships with the template), then `scripts/sheet.sh out/sheet.jpg out/stills/a_*.jpg`. Look at the sheet, fix everything in one pass, re-render only the frames you changed.
 6. **Sound.** `scripts/mix.py`: an event table of synthesized pops, dings and thumps on visible events, the music bed ducked under the voice, mastered to -14 LUFS.
 7. **Render, captions, QA.** `scripts/build.sh` runs the whole chain and ends with the QA report.
@@ -47,9 +47,11 @@ The characters are original blocky figures. Never use Roblox logos, other creato
 - **Every hold creeps in.** No static shot. Glides use smootherstep. Impacts get a 7-frame flip-kick.
 - **Big expressions only at turning points.** Calm faces most of the time, blinks, mouth flaps only on quoted lines.
 - **Stickers land on the word.** "+1", a number, "???", "!!!". One idea per moment.
+- **A refrain is the hero's signature.** A short chant on its own script line, one cut per beat, low-angle hero; it returns at the climax and as the last beat. See [references/direction.md](references/direction.md).
 - **Hide the twist honestly or not at all.** If a prop would give the ending away, keep it out of frame or hide it until the reveal shot.
 
 ## Captions
+Two styles. One word at a time (`--max-words 1 --case lower --shout HUSS`) matches the fastest-cut reels; 2-3 words suits slower stories.
 `scripts/captions.py words.json outdir --w 1440 --h 2560 --frames 1260 --keys "LIE,BLOCK" --keep "clock tower"`
 - 2-3 words, uppercase, white with a black outline and a hard shadow, key words in yellow.
 - Middle of the capitals at 71.5 % of the height, size 3.2 % of the height.

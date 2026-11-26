@@ -15,6 +15,8 @@ ap.add_argument('--gap', type=float, default=0.30); ap.add_argument('--hold', ty
 ap.add_argument('--font', default='/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf')
 ap.add_argument('--key-color', default='FFD21F'); ap.add_argument('--keys', default='')
 ap.add_argument('--keep', action='append', default=[])
+ap.add_argument('--case', choices=['upper', 'lower'], default='upper')  # lower = one-word style from references/direction.md
+ap.add_argument('--shout', default='')  # words always UPPERCASE with '!' kept (the refrain), comma-separated
 a = ap.parse_args()
 W, H = a.w, a.h
 words = json.load(open(a.words))
@@ -22,7 +24,11 @@ KEYS = set(k.strip().upper() for k in a.keys.split(',') if k.strip())
 GLUE = {'the', 'a', 'an', 'of', 'to', 'at', 'my', 'your', 'his', 'her', 'is', 'and', 'with', 'for', 'one', 'that', 'has', 'i', 'so', 'then', 'just', 'way', 'their', 'your', 'you'}
 font = ImageFont.truetype(a.font, round(a.size * H))
 stroke = max(2, round(a.size * H * 0.13)); shadow = max(2, round(a.size * H * 0.09))
-clean = lambda s: re.sub(r'["“”]', '', s).upper()
+SHOUT = set(k.strip().upper() for k in a.shout.split(',') if k.strip())
+def clean(s):
+    s = re.sub(r'["“”]', '', s)
+    if a.case == 'upper' or re.sub(r'[^A-Za-z]', '', s).upper() in SHOUT: return s.upper()
+    return s.lower()
 measure = lambda text: font.getlength(text) + 2 * stroke + shadow
 
 keep = [k.lower().split() for k in a.keep]
@@ -85,7 +91,7 @@ def draw(cap, scale):
     for pass_ in ('shadow', 'text'):
         xx = x
         for t, wdt in zip(toks, widths):
-            key = re.sub(r'[^A-Z0-9]', '', t) in KEYS
+            key = re.sub(r'[^A-Za-z0-9]', '', t).upper() in KEYS
             if pass_ == 'shadow':
                 d.text((xx + sh, top + sh), t, font=big, fill=(0, 0, 0, 255), stroke_width=st, stroke_fill=(0, 0, 0, 255))
             else:
