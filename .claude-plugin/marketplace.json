@@ -1,0 +1,15 @@
+{
+  "name": "roblox-reels",
+  "owner": { "name": "playlikemen", "url": "https://github.com/playlikemen" },
+  "metadata": { "description": "Claude skills for making vertical story reels in code." },
+  "plugins": [
+    {
+      "name": "roblox-reels",
+      "source": "./",
+      "description": "Roblox-style 'In this town' story reels, cartoon 3D shorts, word-synced captions and Minecraft shorts, rendered with three.js inside Remotion.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "category": "media"
+    }
+  ]
+}
